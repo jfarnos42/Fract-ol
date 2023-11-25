@@ -1,25 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   julia.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfarnos- <jfarnos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 22:01:51 by jfarnos-          #+#    #+#             */
-/*   Updated: 2023/11/25 03:53:05 by jfarnos-         ###   ########.fr       */
+/*   Created: 2023/11/25 03:17:58 by jfarnos-          #+#    #+#             */
+/*   Updated: 2023/11/25 03:20:50 by jfarnos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
-
-int	main(void)
-{
-	t_fractal	fractal;
-
-	fractal.mlx = mlx_init();
-	fractal.win = mlx_new_window(fractal.mlx, 800, 600, "Fract'ol");
-	mlx_clear_window(fractal.mlx, fractal.win);
-	render_mandelbrot(&fractal);
-	mlx_loop(fractal.mlx);
-	return (0);
-}

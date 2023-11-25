@@ -1,9 +1,10 @@
 NAME = fractol
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -Imlx
+xFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 RM = rm -rf
 
-SRC = fractol.c
+SRC = fractol.c mandelbrot.c
 
 OBJ_DIR = obj
 OBJ	= $(addprefix ${OBJ_DIR}/, ${SRC:%.c=%.o})
@@ -13,7 +14,7 @@ all: $(NAME)
 ${NAME}: ${OBJ}
 	@${MAKE} -C ./Libft
 	@${MAKE} -C ./ft_printf
-	@${CC} ${CFLAGS} ${OBJ} ./Libft/libft.a ./ft_printf/libftprintf.a -o ${NAME}
+	@${CC} ${CFLAGS} ${OBJ} ./Libft/libft.a ./ft_printf/libftprintf.a ${xFLAGS} -o ${NAME}
 
 ${OBJ_DIR}/%.o:./%.c
 	@mkdir -p ${OBJ_DIR}
