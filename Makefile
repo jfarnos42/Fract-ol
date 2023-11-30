@@ -4,7 +4,7 @@ CFLAGS = -Wall -Wextra -Werror -Imlx
 xFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 RM = rm -rf
 
-SRC = fractol.c mandelbrot.c
+SRC = fractol.c mandelbrot.c input_manager.c
 
 OBJ_DIR = obj
 OBJ	= $(addprefix ${OBJ_DIR}/, ${SRC:%.c=%.o})
